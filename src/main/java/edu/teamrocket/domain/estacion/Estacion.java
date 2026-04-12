@@ -2,14 +2,14 @@ package edu.teamrocket.domain.estacion;
 
 public class Estacion {
 
-    private final Integer id;
+    private final int id;
     private final String direccion;
-    private final Integer anclajes;
+    private final Anclajes anclajes;
 
-    public Estacion(Integer id, String direccion, Integer anclajes) {
+    public Estacion(int id, String direccion, int anclajes) {
         this.id = id;
         this.direccion = direccion;
-        this.anclajes = anclajes;
+        this.anclajes = new Anclajes(anclajes);
     }
 
     private Integer getId() {
@@ -18,6 +18,24 @@ public class Estacion {
 
     private String getDireccion() {
         return direccion;
+    }
+
+    public void consultarEstacion() {
+        System.out.print("Estacion [id=" + Integer.toString(this.id) + ", direccion= " + this.direccion + " ]" + "\n");
+    }
+
+    public void consultarAnclajes() {
+    }
+
+    public int anclajesLibres() {
+
+        int counter = 0;
+        for (Anclaje anclaje : this.anclajes.anclajes()) {
+            if (!anclaje.isOcupado()) {
+                counter += 1;
+            }
+        }
+        return counter;
     }
 
     @Override
