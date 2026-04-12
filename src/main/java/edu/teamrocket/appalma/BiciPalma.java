@@ -1,4 +1,4 @@
-package appalma;
+package edu.teamrocket.appalma;
 
 import domain.bicicleta.Bicicleta;
 import domain.estacion.Estacion;
