@@ -13,6 +13,6 @@ public class Bicicleta implements Movil {
 
     @Override
     public String toString() {
-        return "Bicicleta [id=" + id + "]";
+        return Integer.toString(id);
     }
 }
