@@ -1,5 +1,7 @@
 package edu.teamrocket.domain.estacion;
 
+import edu.teamrocket.domain.bicicleta.Bicicleta;
+
 public class Estacion {
 
     private final int id;
@@ -36,6 +38,15 @@ public class Estacion {
             }
         }
         return counter;
+    }
+
+    public void anclarBicicleta(Bicicleta bicicleta) {
+        
+        for (Anclaje anclaje : this.anclajes.anclajes()) {
+            if (!anclaje.isOcupado()) {
+                anclaje.anclarBici(bicicleta);
+            }
+        }
     }
 
     @Override
