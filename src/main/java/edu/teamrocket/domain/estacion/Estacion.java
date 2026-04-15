@@ -1,6 +1,8 @@
 package edu.teamrocket.domain.estacion;
 
 import edu.teamrocket.domain.bicicleta.Bicicleta;
+import edu.teamrocket.domain.tarjetausuario.Autenticacion;
+import edu.teamrocket.domain.tarjetausuario.TarjetaUsuario;
 
 public class Estacion {
 
@@ -27,6 +29,12 @@ public class Estacion {
     }
 
     public void consultarAnclajes() {
+
+        System.out.println("Estado actual de los anclajes:\n");
+        int index = 1;
+        for (Anclaje anclaje : anclajes.anclajes()) {
+            System.out.println(index + anclaje.toString());
+        }
     }
 
     public int anclajesLibres() {
@@ -41,12 +49,16 @@ public class Estacion {
     }
 
     public void anclarBicicleta(Bicicleta bicicleta) {
-        
+
         for (Anclaje anclaje : this.anclajes.anclajes()) {
             if (!anclaje.isOcupado()) {
                 anclaje.anclarBici(bicicleta);
             }
         }
+    }
+
+    public boolean leerTarjetaUsuario(TarjetaUsuario tarjetaUsuario) {
+        return tarjetaUsuario.isActivada();
     }
 
     @Override
