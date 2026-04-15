@@ -1,6 +1,6 @@
 package edu.teamrocket.domain.tarjetausuario;
 
-public class TarjetaUsuario {
+public class TarjetaUsuario implements Autenticacion {
     
     private final String id;
     private boolean activada;
