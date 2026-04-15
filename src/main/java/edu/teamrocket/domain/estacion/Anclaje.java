@@ -18,8 +18,9 @@ public class Anclaje {
         return this.bici;
     }
 
-    protected void anclarBici() {
+    protected void anclarBici(Movil bici) {
         this.ocupado = true;
+        this.bici = bici;
     }
 
     protected void librarBici() {
