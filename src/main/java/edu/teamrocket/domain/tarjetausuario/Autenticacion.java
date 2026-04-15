@@ -1,5 +1,6 @@
 package edu.teamrocket.domain.tarjetausuario;
 
-public class Autenticacion {
-    
+public interface Autenticacion {
+
+    public boolean isActivada();
 }
